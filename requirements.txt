@@ -1,5 +1,5 @@
 Flask
 Flask-RESTful
-Flask-CorS
+Flask-Cors
 requests
 uwsgi
