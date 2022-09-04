@@ -8,6 +8,7 @@ flask = "*"
 uwsgi = "*"
 flask-restful = "*"
 requests = "*"
+flask-cors = "*"
 
 [dev-packages]
 
