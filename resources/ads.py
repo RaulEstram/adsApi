@@ -5,6 +5,6 @@ from libs.adsRequests import AdsRequests
 
 class Ads(Resource):
 
-    def post(self, key):
+    def get(self, key):
         ads = AdsRequests()
         return jsonify(ads.getDictData(key))
