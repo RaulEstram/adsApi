@@ -1,0 +1,20 @@
+{
+  "ADS_REQUESTS:ERROR_RESPONSE": "Se produjo un error con la petición, específicamente: {error}.",
+  "ADS_REQUESTS:ERROR_CONNECTION-ERROR": "Se produjo un error al realizar la conexión con la petición.",
+  "ADS_REQUESTS:ERROR_UNKNOWN": "Se produjo un error desconocido al realizar la petición.",
+  "ADS:SUCCESSFUL_SAVE": "Se guardo satisfactoriamente el Articulo: {title}.",
+  "ADS:SUCCESSFUL_UPDATE": "Se actaulizo satisfactoriamente el Articulo: {title}.",
+
+  "DBM:ERROR_CONNECTION_LOGIN": "Acceso denegado a la base de datos.",
+  "DBM:ERROR_CONNECTION_HOST": "Se produjo un problema con el host.",
+  "DBM:ERROR_CONNECTION_DB": "Se desconoce la base de datos a la que se quiere conectar.",
+  "DBM:ERROR_CONNECTION": "Se produjo el siguiente error: {error}",
+
+  "DBM:ERROR_QUERY_TABLE": "Se desconoce la tabla del query",
+  "DBM:ERROR_QUERY_SYNTAX": "Hay un problema con la sintaxis del query",
+  "DBM:ERROR_QUERY_COLUMN": "Se desconoce alcuna columna del query",
+  "DBM:ERROR_QUERY": "Se produjo el siguiente error: {error}",
+  "DBM:SUCCESSFUL_QUERY_SAVE": "Se ejecuto correctamente el query.",
+
+  "ARTICLE:SUCCESSFUL_POST": "Se guardo correctamente el Articulo: {title}"
+}

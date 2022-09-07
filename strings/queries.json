@@ -1,0 +1,3 @@
+{
+  "INSERT_ARTICLE": "INSERT INTO `DatosADS` (`autores`, `title`, `pub`, `bibcode`, `doi`, `fpage`, `lpage`, `volumen`, `year`) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s);"
+}

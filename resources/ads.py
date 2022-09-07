@@ -7,4 +7,5 @@ class Ads(Resource):
 
     def get(self, key):
         ads = AdsRequests()
-        return jsonify(ads.getDictData(key))
+        response = ads.getDictData(key)
+        return jsonify(response)

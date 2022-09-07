@@ -9,6 +9,7 @@ uwsgi = "*"
 flask-restful = "*"
 requests = "*"
 flask-cors = "*"
+mysql-connector-python = "*"
 
 [dev-packages]
 
