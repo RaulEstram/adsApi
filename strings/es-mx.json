@@ -14,7 +14,11 @@
   "DBM:ERROR_QUERY_SYNTAX": "Hay un problema con la sintaxis del query",
   "DBM:ERROR_QUERY_COLUMN": "Se desconoce alcuna columna del query",
   "DBM:ERROR_QUERY": "Se produjo el siguiente error: {error}",
-  "DBM:SUCCESSFUL_QUERY_SAVE": "Se ejecuto correctamente el query.",
+  "DBM:SUCCESSFUL_QUERY": "Se ejecuto correctamente el query.",
 
-  "ARTICLE:SUCCESSFUL_POST": "Se guardo correctamente el Articulo: {title}"
+  "ARTICLE:SUCCESSFUL_POST": "Se guardo correctamente el Articulo: {title}",
+  "ARTICLE:SUCCESSFUL_UPDATE": "Se Actualizo correctamente el Articulo: {title}",
+
+  "USER:USER_EXIST": "El Usuario si existe.",
+  "USER_NOT_EXIST": "El Usuario no existe."
 }

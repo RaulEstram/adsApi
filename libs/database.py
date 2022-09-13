@@ -8,7 +8,7 @@ class DBManager:
         'user': 'root',
         'password': '',
         'host': '127.0.0.1',
-        'database': 'ads'
+        'database': 'adsServer'
     }
 
     def __init__(self):
@@ -29,11 +29,14 @@ class DBManager:
     def getStatus(self):
         return self._status
 
+    def getResults(self):
+        return self._cursor.fetchall()
+
     def query(self, query: str, values=()) -> dict:
         try:
             self._cursor.execute(query, values)
             self._connection.commit()
-            return {"status": True, "message": getText("DBM:SUCCESSFUL_QUERY_SAVE")}
+            return {"status": True, "message": getText("DBM:SUCCESSFUL_QUERY")}
         except db.Error as error:
             if error.errno == errorcode.ER_NO_SUCH_TABLE:
                 return {"status": False, "error": getText("DBM:ERROR_QUERY_TABLE")}
@@ -43,4 +46,3 @@ class DBManager:
                 return {"status": False, "error": getText("DBM:ERROR_QUERY_COLUMN")}
             else:
                 return {"status": False, "error": getText("DBM:ERROR_QUERY").format(error=error.msg)}
-           

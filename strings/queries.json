@@ -1,3 +1,5 @@
 {
-  "INSERT_ARTICLE": "INSERT INTO `DatosADS` (`autores`, `title`, `pub`, `bibcode`, `doi`, `fpage`, `lpage`, `volumen`, `year`) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s);"
+  "INSERT_ARTICLE": "INSERT INTO `DatosADS` (`autores`, `title`, `pub`, `bibcode`, `doi`, `fpage`, `lpage`, `volumen`, `year`) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s);",
+  "UPDATE_ARTICLE": "UPDATE `DatosADS` SET `autores` = %s, `title` = %s, `pub` = %s, `bibcode` = %s, `doi` = %s, `fpage` = %s, `lpage` = %s, `volumen` = %s, `year` = %s WHERE `DatosADS`.`id` = %s;",
+  "IS_USER_EXIST": "SELECT * FROM `users` WHERE `user_id` = %s;"
 }
