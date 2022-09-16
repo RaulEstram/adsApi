@@ -8,7 +8,7 @@ class AdsRequests:
     # Constructor
     def __init__(self):
         self._token = "TnEWAPDi8n5R3taijqXleJDTZ5LNDr2LMJjOOsec"
-        self._endpoint = "https://api.adsabs.harvard.edu/v1/search/query?q={key}&rows=200&fl=author,title,pub,bibcode,doi,volume,year,page_range,links_data&sort=date desc"
+        self._endpoint = "https://api.adsabs.harvard.edu/v1/search/query?q={key}&rows=200&fl=author,title,pub,bibcode,doi,volume,year,page_range,links_dat,id,count_pages&sort=date desc"
 
     def getDictData(self, key: str) -> dict:
         """
@@ -46,6 +46,8 @@ class AdsRequests:
             'page_range': data['page_range'] if 'page_range' in keys else "",
             'volume': data['volume'] if 'volume' in keys else "",
             'year': data['year'] if 'year' in keys else "",
+            'id_article': data['id'] if 'id' in keys else "",
+            "page_count": data['page_count'] if 'page_count' in keys else "",
         }
 
     def _getCleanDictWithAllArticles(self, data: dict) -> dict:

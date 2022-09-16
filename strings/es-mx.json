@@ -18,7 +18,12 @@
 
   "ARTICLE:SUCCESSFUL_POST": "Se guardo correctamente el Articulo: {title}",
   "ARTICLE:SUCCESSFUL_UPDATE": "Se Actualizo correctamente el Articulo: {title}",
+  "ARTICLE:NO_DATA": "No se obtuvo la informacion suficiente en la peticion para guardar o actualizar el articulo.",
 
   "USER:USER_EXIST": "El Usuario si existe.",
-  "USER_NOT_EXIST": "El Usuario no existe."
+  "USER:USER_NOT_EXIST": "El Usuario no existe.",
+
+  "USERARTICLE:USER_HAVE_ARTICLE": "El Usuario si tiene el articulo.",
+  "USERARTICLE:USER_HAVE_NOT_ARTICLE": "El Usuario no tiene el articulo.",
+  "USERARTICLE:NO_DATA": "No se obtuvo la informacion suficiente en la peticion para comprobar si el usuario tiene el articulo"
 }

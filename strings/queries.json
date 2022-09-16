@@ -1,5 +1,6 @@
 {
-  "INSERT_ARTICLE": "INSERT INTO `DatosADS` (`autores`, `title`, `pub`, `bibcode`, `doi`, `fpage`, `lpage`, `volumen`, `year`) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s);",
-  "UPDATE_ARTICLE": "UPDATE `DatosADS` SET `autores` = %s, `title` = %s, `pub` = %s, `bibcode` = %s, `doi` = %s, `fpage` = %s, `lpage` = %s, `volumen` = %s, `year` = %s WHERE `DatosADS`.`id` = %s;",
-  "IS_USER_EXIST": "SELECT * FROM `users` WHERE `user_id` = %s;"
+  "INSERT_ARTICLE": "INSERT INTO `articulos` (`user_id`, `autor_pub`, `titulo_pub`, `nombre_pub`, `url`, `pagi_pub`, `pagf_pub`, `bibcode`, `doi`, `numero_pub`, `ano_pub`, `review`, `estatus`, `articulo_id`, `total_paginas`) Values(%s, %s,%s,%s,%s,%s,%s,%s,%s,%s,%s, '', '', %s, %s);",
+  "UPDATE_ARTICLE": "UPDATE `articulos` SET `autor_pub` = %s, `titulo_pub` = %s, `nombre_pub` = %s, `url` = %s, `pagi_pub` = %s, `pagf_pub` = %s, `bibcode` = %s, `doi` = %s, `numero_pub` = %s, `ano_pub` = %s, `articulo_id` = %s, `total_paginas` = %s WHERE `articulos`.`bibcode` = %s and `articulos`.`user_id` = %s;",
+  "IS_USER_EXIST": "SELECT * FROM `users` WHERE `user_id` = %s;",
+  "USER_HAVE_ARTICLE": "SELECT `articulos`.`bibcode`, `users`.`user_id` FROM `articulos` INNER JOIN `users` on `users`.`user_id`= `articulos`.`user_id` WHERE `users`.`user_id` = %s AND `articulos`.`bibcode`=%s;"
 }
