@@ -6,9 +6,10 @@ from libs.strings import getText
 from libs.queries import getQuery
 
 
-class Article(Resource):
+class DataArticles:
 
-    def _getDataArticules(self, res: dict):
+    @staticmethod
+    def getDataArticules(res: dict):
         keys = res.keys()
         user = res['user_id'] if 'user_id' in keys and res['user_id'] != '' else None
         author = res['authors'] if 'authors' in keys and res['authors'] != '' else None
@@ -33,11 +34,14 @@ class Article(Resource):
         else:
             return {"status": False, "error": getText("ARTICLE:NO_DATA")}
 
+
+class Article(Resource):
+
     def post(self):
         db = DBManager()
         if db.getStatus()["status"]:
             res = request.get_json()
-            data = self._getDataArticules(res)
+            data = DataArticles.getDataArticules(res)
             if data['status']:
                 response = db.query(getQuery("INSERT_ARTICLE"), data['values'])
                 if response["status"]:
@@ -53,7 +57,7 @@ class Article(Resource):
         db = DBManager()
         if db.getStatus()["status"]:
             res = request.get_json()
-            data = self._getDataArticules(res)
+            data = DataArticles.getDataArticules(res)
             if data['status']:
                 response = db.query(getQuery("UPDATE_ARTICLE"), data['values'])
                 if response["status"]:
@@ -64,3 +68,51 @@ class Article(Resource):
                 return {"status": False, "error": data['error']}
         else:
             return {"status": False, "error": db.getStatus()["error"]}
+
+
+class Articles(Resource):
+
+    def post(self):
+        db = DBManager()
+        res = request.get_json()
+        keys = res.keys()
+        info = {"status": True, "inserts": 0, "updates": 0, "errors": 0}
+
+        if not db.getStatus()["status"]:
+            return {"status": False, "error": db.getStatus()["error"]}
+        if 'user_id' not in keys or 'data' not in keys:
+            return {"status": False, "error": "Faltan datos"}
+        if len(res['data']) == 0:
+            return {"status": False, "error": "No hay articulos para guardar"}
+
+        for value in res['data'].values():
+            response = db.query(getQuery("USER_HAVE_ARTICLE"), (res['user_id'], value['bibcode']))
+            if not response["status"]:
+                info["errors"] += 1
+                continue
+            response = db.getResults()
+
+            if len(response) == 0:
+                value['user_id'] = res['user_id']
+                data = DataArticles.getDataArticules(value)
+                if not data['status']:
+                    info["errors"] += 1
+                    continue
+                response = db.query(getQuery("INSERT_ARTICLE"), data['values'])
+                if not response["status"]:
+                    info["errors"] += 1
+                    continue
+                info["inserts"] += 1
+            else:
+                value['user_id'] = res['user_id']
+                value['update'] = True
+                data = DataArticles.getDataArticules(value)
+                if not data['status']:
+                    info["errors"] += 1
+                    continue
+                response = db.query(getQuery("UPDATE_ARTICLE"), data['values'])
+                if not response["status"]:
+                    info["errors"] += 1
+                    continue
+                info["updates"] += 1
+        return info
