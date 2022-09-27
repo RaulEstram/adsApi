@@ -2,28 +2,28 @@
   "ADS_REQUESTS:ERROR_RESPONSE": "Se produjo un error con la petición, específicamente: {error}.",
   "ADS_REQUESTS:ERROR_CONNECTION-ERROR": "Se produjo un error al realizar la conexión con la petición.",
   "ADS_REQUESTS:ERROR_UNKNOWN": "Se produjo un error desconocido al realizar la petición.",
-  "ADS:SUCCESSFUL_SAVE": "Se guardo satisfactoriamente el Articulo: {title}.",
-  "ADS:SUCCESSFUL_UPDATE": "Se actaulizo satisfactoriamente el Articulo: {title}.",
+  "ADS:SUCCESSFUL_SAVE": "Se guardó satisfactoriamente el artículo: {title}.",
+  "ADS:SUCCESSFUL_UPDATE": "Se actualizó satisfactoriamente el artículo: {title}.",
 
   "DBM:ERROR_CONNECTION_LOGIN": "Acceso denegado a la base de datos.",
   "DBM:ERROR_CONNECTION_HOST": "Se produjo un problema con el host.",
   "DBM:ERROR_CONNECTION_DB": "Se desconoce la base de datos a la que se quiere conectar.",
   "DBM:ERROR_CONNECTION": "Se produjo el siguiente error: {error}",
 
-  "DBM:ERROR_QUERY_TABLE": "Se desconoce la tabla del query",
-  "DBM:ERROR_QUERY_SYNTAX": "Hay un problema con la sintaxis del query",
-  "DBM:ERROR_QUERY_COLUMN": "Se desconoce alcuna columna del query",
-  "DBM:ERROR_QUERY": "Se produjo el siguiente error: {error}",
-  "DBM:SUCCESSFUL_QUERY": "Se ejecuto correctamente el query.",
+  "DBM:ERROR_QUERY_TABLE": "Se desconoce la tabla del query.",
+  "DBM:ERROR_QUERY_SYNTAX": "Hay un problema con la sintaxis del query.",
+  "DBM:ERROR_QUERY_COLUMN": "Se desconoce la columna del query.",
+  "DBM:ERROR_QUERY": "Se produjo el siguiente error: {error}.",
+  "DBM:SUCCESSFUL_QUERY": "Se ejecutó correctamente el query.",
 
-  "ARTICLE:SUCCESSFUL_POST": "Se guardo correctamente el Articulo: {title}",
-  "ARTICLE:SUCCESSFUL_UPDATE": "Se Actualizo correctamente el Articulo: {title}",
-  "ARTICLE:NO_DATA": "No se obtuvo la informacion suficiente en la peticion para guardar o actualizar el articulo.",
+  "ARTICLE:SUCCESSFUL_POST": "Se guardó correctamente el artículo: {title}",
+  "ARTICLE:SUCCESSFUL_UPDATE": "Se actualizó correctamente el artículo: {title}",
+  "ARTICLE:NO_DATA": "No se obtuvo la información suficiente en la petición para guardar o actualizar el artículo.",
 
   "USER:USER_EXIST": "El Usuario si existe.",
   "USER:USER_NOT_EXIST": "El Usuario no existe.",
 
-  "USERARTICLE:USER_HAVE_ARTICLE": "El Usuario si tiene el articulo.",
-  "USERARTICLE:USER_HAVE_NOT_ARTICLE": "El Usuario no tiene el articulo.",
-  "USERARTICLE:NO_DATA": "No se obtuvo la informacion suficiente en la peticion para comprobar si el usuario tiene el articulo"
+  "USERARTICLE:USER_HAVE_ARTICLE": "El Usuario si tiene el artículo.",
+  "USERARTICLE:USER_HAVE_NOT_ARTICLE": "El Usuario no tiene el artículo.",
+  "USERARTICLE:NO_DATA": "No se obtuvo la información suficiente en la petición para comprobar si el usuario tiene el artículo"
 }
