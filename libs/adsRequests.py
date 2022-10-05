@@ -40,7 +40,7 @@ class AdsRequests:
             'authors': "".join(map(str, data['author'])) if 'author' in keys else "",
             'title': data['title'][0] if 'title' in keys else "",
             'pub': data['pub'] if 'pub' in keys else "",
-            'url': "url",
+            'url': f"https://ui.adsabs.harvard.edu/abs/{data['bibcode'] if 'bibcode' in keys else ''}/abstract",
             'bibcode': data['bibcode'] if 'bibcode' in keys else "",
             'doi': data['doi'][0] if 'doi' in keys else "",
             'page_range': data['page_range'] if 'page_range' in keys else "",
