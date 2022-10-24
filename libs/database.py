@@ -5,10 +5,10 @@ from libs.strings import getText
 
 class DBManager:
     config = {
-        'user': 'root',
-        'password': '',
+        'user': 'ads2023',
+        'password': 'Uac2023$FES',
         'host': '127.0.0.1',
-        'database': 'adsServer'
+        'database': 'ads'
     }
 
     def __init__(self):

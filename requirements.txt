@@ -1,6 +1,0 @@
-Flask
-Flask-RESTful
-Flask-Cors
-requests
-uwsgi
-mysql-connector-python
