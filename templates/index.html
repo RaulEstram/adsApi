@@ -50,7 +50,7 @@
         </div>
 
         <div class="table-responsive">
-            <table class="table table-striped">
+            <table class="table table-striped" id="tablaDatos">
                 <!-- table-dark -->
                 <thead class="table-dark">
                     <tr class="table-dark">
@@ -73,10 +73,19 @@
             <div id="loadtable"></div>
         </div>
 
+        <div class="save-buttons">
         <div class="content save-all-button">
             <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#staticBackdrop" id="save-all">
-                Guardar todos los articulos {{user}}
+                Guardar todos los articulos
             </button>
+        </div>
+
+        <div class="content save-sql-file">
+            <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#staticBackdrop" id="save-sql">
+                Guardar archivo sql
+            </button>
+        </div>
+
         </div>
     </main>
 

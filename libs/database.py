@@ -5,8 +5,8 @@ from libs.strings import getText
 
 class DBManager:
     config = {
-        'user': 'ads2023',
-        'password': 'Uac2023$FES',
+        'user': 'root',
+        'password': '',
         'host': '127.0.0.1',
         'database': 'ads'
     }

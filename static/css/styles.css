@@ -12,10 +12,10 @@ img {
     object-fit: cover;
 }
 
-th {
-    height: 10px !important;
-    background-color: white;
+.table-responsive{
+  height: 70vh;
 }
+
 
 .main-table-body {
 
@@ -23,10 +23,19 @@ th {
 }
 
 .save-all-button {
-    display: block;
+display: inline-block;
     text-align: right;
+    margin-bottom: 1rem;
+}
+
+.save-sql-file {
+    display: inline-block;
+    text-align: right;
+}
+
+.save-buttons{
     margin-top: 3rem;
-    margin-bottom: 2rem;
+    margin-bottom: 3rem;
 }
 
 .fixed {
@@ -54,6 +63,12 @@ th {
     visibility: hidden;
 }
 
+
+/*
+
+loading css
+
+*/
 
 
 .lds-spinner {

@@ -195,6 +195,16 @@ document.body.addEventListener("click", async (e) => {
     $saveButton.classList.add("save-all-articles");
   }
 
+  // guardar archivo
+  if (e.target.matches("#save-sql")) {
+    $saveButton.dataset.id = id;
+    $saveButton.dataset.all = true;
+    document.getElementById("text-modal").innerHTML =
+      "¿Está Seguro que quiere guardar todos los artículos que aparecen?<br><br>Los artículos que ya tenga registrados se actualizaran con la información que aparece en esta página, de lo contrario se guardara, por lo que se recomienda guardarlos uno por uno.";
+    $saveButton.classList.add("save-sql-file");
+  }
+
+  
   // acction por si se salen del modal
   if (e.target.matches(".cancel-button")) {
     removeData();
@@ -208,6 +218,11 @@ document.body.addEventListener("click", async (e) => {
   // accion para guardar todos los articulos
   if (e.target.matches(".save-all-articles")) {
     saveAllArticles();
+    removeData();
+  }
+
+  if (e.target.matches(".save-sql-file")) {
+    saveSqlFile();
     removeData();
   }
 });
@@ -236,6 +251,7 @@ async function request(url, body, update = false) {
 function removeData() {
   $saveButton.classList.remove("save-article");
   $saveButton.classList.remove("save-all-articles");
+  $saveButton.classList.remove("save-sql-file");
   $saveButton.removeAttribute("data-all");
   $saveButton.removeAttribute("data-id");
 }
@@ -261,9 +277,7 @@ async function saveArticle(id_art) {
     if (response.status) {
       showMessage(response.message);
     } else {
-      showError(
-        "Se produjo un error al guardar el artículo, puede ser que tenga un carácter especial inválido, prueba a guardar el artículo manualmente."
-      );
+      showError(response.error);
     }
   } catch (error) {
     showError("Error al Guardar el artículo.");
@@ -296,3 +310,31 @@ async function saveAllArticles() {
     showError("Error al guardar todos los Artículos.");
   }
 }
+
+async function saveSqlFile() {
+  try {
+    const url = endpoint + "/queries";
+    const body = {
+      data: structuredClone(dataArticles),
+      user_id: id,
+    };
+    
+    const data = await request(url, body);
+
+    console.log(data.data);
+
+    let response = await fetch(endpoint + "/downloads/" + data.filename);
+
+    console.log(response);
+
+    if (!response.redirected) {
+      window.location.href = response.url;
+    }
+
+  } catch (error) {
+    console.log(error);
+    showError("Error al guardar todos los Artículos.");
+  }
+}
+
+
