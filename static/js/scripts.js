@@ -200,7 +200,7 @@ document.body.addEventListener("click", async (e) => {
     $saveButton.dataset.id = id;
     $saveButton.dataset.all = true;
     document.getElementById("text-modal").innerHTML =
-      "¿Está Seguro que quiere guardar todos los artículos que aparecen?<br><br>Los artículos que ya tenga registrados se actualizaran con la información que aparece en esta página, de lo contrario se guardara, por lo que se recomienda guardarlos uno por uno.";
+      "¿Está Seguro que quiere guardar un archivo sql?<br><br>Estos archivos NO son perfectos, por lo que podrian llegan a tener algun error en la sintaxis debido a los valores del articulo, es recomendable que se revisen";
     $saveButton.classList.add("save-sql-file");
   }
 
@@ -321,11 +321,9 @@ async function saveSqlFile() {
     
     const data = await request(url, body);
 
-    console.log(data.data);
-
     let response = await fetch(endpoint + "/downloads/" + data.filename);
 
-    console.log(response);
+    if(response.statusText !== "OK") throw "error archivo"
 
     if (!response.redirected) {
       window.location.href = response.url;
@@ -333,7 +331,7 @@ async function saveSqlFile() {
 
   } catch (error) {
     console.log(error);
-    showError("Error al guardar todos los Artículos.");
+    showError("No hay ningun Articulo con el cual podamos crear un archivo sql, prueba realizando una busqueda.");
   }
 }
 
